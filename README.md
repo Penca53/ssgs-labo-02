@@ -141,4 +141,8 @@ I file di test per questo progetto (ad esempio, `stringUtils.test.js`) si trovan
 
 Ad esempio, i test per `src/stringUtils.js` si trovano in `test/stringUtils.test.js`.
 
+### Workflow Test Automatici
+
+Attraverso il workflow di GitHub Actions `test.yml`, GitHub esegue tutti i test del progetto per ogni Pull Request destinata al branch `main` e ogni push diretto a `main`. Il report di code-coverage viene automaticamente caricato nella sezione `Summary` del workflow, visibile tramite la pagina web GitHub.
+
 -----
