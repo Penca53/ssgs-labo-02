@@ -1,12 +1,25 @@
 {
   "name": "labo-string",
   "version": "1.0.0",
-  "description": "",
+  "description": "A command-line application for performing basic string operations, such as inverting a string, checking if a string is palindrome, truncating a string, and counting characters.",
   "main": "app.js",
   "scripts": {
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Penca53",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Penca53/ssgs-labo-02.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Penca53/ssgs-labo-02/issues"
+  },
+  "homepage": "https://github.com/Penca53/ssgs-labo-02",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
 }
