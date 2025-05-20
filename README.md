@@ -39,8 +39,6 @@ npm -v
     npm install
     ```
 
-    *(Attualmente, questo progetto non ha dipendenze esterne elencate in `package.json`, ma questo comando è una buona pratica per progetti Node.js.)*
-
 -----
 
 ## Avvio dell'Applicazione
@@ -119,3 +117,28 @@ node index.js <numero_funzione> "<stringa_input>" [parametro_aggiuntivo]
     ```
 
 Se gli argomenti non sono forniti correttamente, l'applicazione mostrerà un messaggio di aiuto.
+
+-----
+
+## Esecuzione dei Test
+
+Questo progetto utilizza [Jest](https://jestjs.io/) come framework di testing per verificare la correttezza delle funzioni di utilità per le stringhe. 
+Il progetto mira al **100%** di test code-coverage.
+
+### Eseguire i Test
+
+Per eseguire tutti i test, eseguire il seguente comando dalla directory principale del progetto:
+
+```bash
+npm test
+```
+
+Jest cercherà automaticamente i file di test e li eseguirà. L'output mostrerà quali test sono passati e quali sono falliti, insieme a eventuali dettagli sugli errori e statistiche sulla code-coverage.
+
+### Struttura dei Test
+
+I file di test per questo progetto (ad esempio, `stringUtils.test.js`) si trovano in una cartella denominata `test` nella directory principale del progetto. Ogni file di test contiene una serie di `describe` e `test` (o `it`) blocchi che definiscono suite di test e casi di test individuali per ciascuna funzione.
+
+Ad esempio, i test per `src/stringUtils.js` si trovano in `test/stringUtils.test.js`.
+
+-----
