@@ -1,4 +1,8 @@
-const { reverseString, isPalindrome } = require("../src/stringUtils");
+const {
+  reverseString,
+  isPalindrome,
+  truncateString,
+} = require("../src/stringUtils");
 
 describe("stringUtils", () => {
   describe("reverseString", () => {
@@ -54,6 +58,34 @@ describe("stringUtils", () => {
 
     test("Restituisce true per una stringa di un singolo carattere", () => {
       expect(isPalindrome("a")).toBe(true);
+    });
+  });
+
+  describe("truncateString", () => {
+    test("Tronca una stringa più lunga della lunghezza massima", () => {
+      expect(truncateString("Hello world", 5)).toBe("Hello...");
+    });
+
+    test("Non tronca una stringa più corta o uguale alla lunghezza massima", () => {
+      expect(truncateString("Hi", 5)).toBe("Hi");
+      expect(truncateString("Hello", 5)).toBe("Hello");
+    });
+
+    test("Gestisce una lunghezza massima di 0", () => {
+      expect(truncateString("Hello", 0)).toBe("...");
+    });
+
+    test("Restituisce una stringa vuota se l'input è una stringa vuota", () => {
+      expect(truncateString("", 5)).toBe("");
+    });
+
+    test("Tronca correttamente quando maxLength è uguale alla lunghezza della stringa", () => {
+      expect(truncateString("test", 4)).toBe("test");
+    });
+
+    test('Aggiunge "..." solo se la stringa è effettivamente troncata', () => {
+      expect(truncateString("abcde", 3)).toBe("abc...");
+      expect(truncateString("abc", 3)).toBe("abc");
     });
   });
 });
