@@ -4,6 +4,7 @@
   "description": "A command-line application for performing basic string operations, such as inverting a string, checking if a string is palindrome, truncating a string, and counting characters.",
   "main": "app.js",
   "scripts": {
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
