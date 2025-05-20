@@ -2,6 +2,7 @@ const {
   reverseString,
   isPalindrome,
   truncateString,
+  countCharacters,
 } = require("../src/stringUtils");
 
 describe("stringUtils", () => {
@@ -86,6 +87,42 @@ describe("stringUtils", () => {
     test('Aggiunge "..." solo se la stringa è effettivamente troncata', () => {
       expect(truncateString("abcde", 3)).toBe("abc...");
       expect(truncateString("abc", 3)).toBe("abc");
+    });
+  });
+
+  describe("countCharacters", () => {
+    test("Conta correttamente i caratteri in una stringa semplice", () => {
+      expect(countCharacters("banana")).toEqual({ b: 1, a: 3, n: 2 });
+    });
+
+    test("Restituisce un oggetto vuoto per una stringa vuota", () => {
+      expect(countCharacters("")).toEqual({});
+    });
+
+    test("Conta correttamente i caratteri in una stringa con spazi", () => {
+      expect(countCharacters("hello world")).toEqual({
+        h: 1,
+        e: 1,
+        l: 3,
+        o: 2,
+        " ": 1,
+        w: 1,
+        r: 1,
+        d: 1,
+      });
+    });
+
+    test("Distingue tra maiuscole e minuscole", () => {
+      expect(countCharacters("AaBbA")).toEqual({ A: 2, a: 1, B: 1, b: 1 });
+    });
+
+    test("Conta numeri e simboli", () => {
+      expect(countCharacters("a1! a1!")).toEqual({
+        a: 2,
+        1: 2,
+        "!": 2,
+        " ": 1,
+      });
     });
   });
 });
